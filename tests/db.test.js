@@ -11,7 +11,6 @@ beforeEach(() => {
 afterEach(() => testEnv.cleanup(testDb))
 
 test('getUsers gets all users', () => {
-  // One for each letter of the alphabet!
   const expected = 26
   return db.getUsers(testDb)
     .then(users => {
