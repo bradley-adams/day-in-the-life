@@ -8,6 +8,7 @@ let score = 0
 
 //Route for home page
 router.get('/', (req, res) => {
+
   res.render('index')
 })
 
@@ -21,10 +22,6 @@ router.get('/scene/:id', (req, res) => {
     console.log(err)
   })
 })
-
-
-
-
 
 
 module.exports = router
