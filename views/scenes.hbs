@@ -1,11 +1,14 @@
-<h1>Scene One: {{title}}</h1>
+<h1>{{title}}</h1>
 <img class="sceneimg" src="{{image}}"></img>
 <p class="scenetext">{{sceneText}}</p>
-<form action="" method="">
+
+
+<form action="/goToNext/" method="post">
+  <input type="text" value="{{next}}" name="next" style="display:none">
   <ul class="answers">
     {{#each choices}}
-      <input type="radio" name="choices" value="{{choiceText}}">{{choiceText}}<br>
+      <input  type="radio" name="choices" value="{{choice_id}}" >{{choiceText}}<br>
     {{/each}}
   </ul>
-  <input type='submit' value='Next' class="btn">
+  <input class="button" type='submit' value='Next' class="btn">
 </form>
