@@ -1,8 +1,8 @@
 <h1>Scene One: {{title}}</h1>
-<img src="{{image}}"></img>
-<p>{{sceneText}}</p>
+<img class="sceneimg" src="{{image}}"></img>
+<p class="scenetext">{{sceneText}}</p>
 <form action="" method="">
-  <ul>
+  <ul class="answers">
     {{#each choices}}
       <input type="radio" name="choices" value="{{choiceText}}">{{choiceText}}<br>
     {{/each}}
