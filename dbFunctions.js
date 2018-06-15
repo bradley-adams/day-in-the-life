@@ -21,17 +21,6 @@ function getScene (id, testConn) {
   })
 }
 
-
-function getUsers (testConn) {
-  const conn = testConn || connection
-  return conn('users').select()
-}
-
-function getUser (id, testConn) {
-  const conn = testConn || connection
-  return conn('users').where('id', id).first()
-}
-
 function tidyData (input) {
   let tidied = {}
   tidied.id = input[0].id //Assume all ids are the same
