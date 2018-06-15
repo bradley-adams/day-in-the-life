@@ -3,7 +3,8 @@ const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
 
 module.exports = {
-  getScene: getScene
+  getScene: getScene,
+  getChoice: getChoice
 }
 
 function getScenes (testConn) {
@@ -17,8 +18,15 @@ function getScene (id, testConn) {
   const conn = testConn || connection
   return getScenes(conn).where('id', id)
   .then((untidy) => {
+    console.log(id)
     return tidyData(untidy)
   })
+}
+
+function getChoice (choice_id, testConn) {
+  const conn = testConn || connection
+  return conn('choices')
+  .where('choice_id', choice_id).first()
 }
 
 function tidyData (input) {
