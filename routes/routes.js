@@ -4,8 +4,27 @@ const db = require('../dbFunctions')
 
 const router = express.Router()
 
+let score = 0
+
+//Route for home page
 router.get('/', (req, res) => {
-      res.send('Today is the first day of the rest of your life. <br>But so is tomorrow, so no pressure.')
-    })
+  res.render('index')
+})
+
+router.get('/scene/:id', (req, res) => {
+  console.log('Trying to load a scene')
+  db.getScene(req.params.id)
+  .then ((data) => {
+    // res.render('scene', data)
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+})
+
+
+
+
+
 
 module.exports = router
